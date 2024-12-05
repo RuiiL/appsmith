@@ -1,0 +1,9 @@
+select
+	count(distinct a.bill_number) 今日发货车次,
+	sum(b.plan_qty) as 今日发货总数
+from
+	mm_allocation_bill a
+inner join mm_allocation_detail b on
+	b.bill_id = a.id
+where
+	a.accounting_date > CONCAT(DATE_FORMAT(DATE_SUB(NOW(), interval 450 minute), '%Y-%m-%d'), ' 07:30:00');

@@ -1,0 +1,16 @@
+SELECT *
+FROM ((SELECT tmp.created_at 提交日期,
+              tm2.f_name     项目,
+              tmp.f_date     日期,
+              tmp.f_num      数量
+       FROM t_model_plan tmp
+                INNER JOIN t_model2 tm2 ON tm2.id = tmp.fk_model2)
+      UNION
+      (SELECT tpp.created_at                                            提交日期,
+              CONCAT(tp.f_material_short_code, '_', tp.f_material_name) 项目,
+              tpp.f_date                                                日期,
+              tpp.f_num                                                 数量
+       FROM t_product_plan tpp
+                INNER JOIN t_products tp ON tp.id = tpp.fk_product
+       WHERE tpp.fk_model_plan IS NULL)) t1
+ORDER BY 提交日期 DESC

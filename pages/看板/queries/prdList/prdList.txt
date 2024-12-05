@@ -1,0 +1,4 @@
+SELECT DISTINCT f_material_code 物料编码
+FROM t_product_plan tpp
+         INNER JOIN t_products tp ON tp.id = tpp.fk_product
+WHERE tpp.f_date >= DATE_SUB(NOW(), INTERVAL 30 DAY)

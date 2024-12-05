@@ -1,0 +1,8 @@
+SELECT REPLACE(a.target_warehouse_name, '客户库-', '') 工厂,
+       COUNT(DISTINCT a.bill_number)                   今日发货车次,
+       SUM(b.plan_qty) AS                              今日发货总数
+FROM mm_allocation_bill a
+         INNER JOIN mm_allocation_detail b ON
+    b.bill_id = a.id
+WHERE a.accounting_date > CONCAT(DATE_FORMAT(DATE_SUB(NOW(), INTERVAL 450 MINUTE), '%Y-%m-%d'), ' 07:30:00')
+GROUP BY a.target_warehouse_name

@@ -1,0 +1,3 @@
+SELECT DISTINCT target_warehouse_name label, target_warehouse_name value
+FROM mm_allocation_bill
+WHERE accounting_date >= CONCAT(DATE_FORMAT(DATE_SUB(NOW(), INTERVAL 450 MINUTE), '%Y-%m-%d'), ' 07:30:00');

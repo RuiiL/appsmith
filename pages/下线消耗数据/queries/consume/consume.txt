@@ -1,0 +1,16 @@
+SELECT 工厂, 物料编码, 物料名称, 日期, SUM(数量) 数量
+FROM (SELECT tf.f_name                           工厂,
+             tp.f_material_code                  物料编码,
+             tp.f_material_name                  物料名称,
+             DATE_FORMAT(tpc.f_date, '%Y-%m-%d') 日期,
+             tpc.f_num                           数量
+      FROM t_product_consum tpc
+               INNER JOIN t_factory tf ON tf.id = tpc.fk_factory
+               INNER JOIN t_products tp ON tp.id = tpc.fk_product
+      WHERE tf.f_name LIKE '%{{Select_Factory.selectedOptionValue || ''}}%'
+				AND tp.f_material_code LIKE '%{{Input_MaterialCode.text}}%'
+				AND tp.f_material_name LIKE '%{{Input_MaterialName.text}}%'
+				AND tpc.f_date >= '{{DatePicker_Start.formattedDate}}'
+				AND tpc.f_date <= '{{DatePicker_End.formattedDate}}') t1
+GROUP BY 工厂, 物料编码, 物料名称, 日期
+;

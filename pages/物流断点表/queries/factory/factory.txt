@@ -1,0 +1,5 @@
+SELECT REPLACE(warehouse_name, '客户库-', '') label,
+#     warehouse_name value
+       REPLACE(warehouse_name, '客户库-', '') value
+FROM ba_warehouse
+WHERE group_name = '客户库';

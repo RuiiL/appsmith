@@ -1,0 +1,8 @@
+SELECT
+    b.material_code 物料编码,
+    b.material_name 名称,
+    b.plan_qty 数量
+FROM mm_allocation_bill a
+         INNER JOIN mm_allocation_detail b ON b.bill_id = a.id
+WHERE a.accounting_date > CONCAT(DATE_FORMAT(DATE_SUB(NOW(), INTERVAL 450 MINUTE), '%Y-%m-%d'), ' 07:30:00')
+ AND a.bill_number LIKE '%{{Table_transList.selectedRow.单据编号}}%';

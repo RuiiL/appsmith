@@ -1,0 +1,126 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "allowScroll": true,
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 46,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "chartData": {
+    "241dnjedmv": {
+      "data": "[\n  {\n    \"value\": 335,\n    \"name\": \"衬衫\"\n  },\n  {\n    \"value\": 234,\n    \"name\": \"羊毛衫\"\n  },\n  {\n    \"value\": 1548,\n    \"name\": \"雪纺衫\"\n  },\n  {\n    \"value\": 758,\n    \"name\": \"裤子\"\n  },\n  {\n    \"value\": 358,\n    \"name\": \"高跟鞋\"\n  },\n  {\n    \"value\": 658,\n    \"name\": \"袜子\"\n  }\n]",
+      "seriesName": "秋季系列",
+      "type": "line"
+    },
+    "snxw31j1e2": {
+      "data": "[\n  {\n    \"value\": 456,\n    \"name\": \"衬衫\"\n  },\n  {\n    \"value\": 678,\n    \"name\": \"羊毛衫\"\n  },\n  {\n    \"value\": 123,\n    \"name\": \"雪纺衫\"\n  },\n  {\n    \"value\": 666,\n    \"name\": \"裤子\"\n  },\n  {\n    \"value\": 888,\n    \"name\": \"高跟鞋\"\n  },\n  {\n    \"value\": 999,\n    \"name\": \"袜子\"\n  }\n]",
+      "handler": "",
+      "seriesName": "系列2"
+    }
+  },
+  "chartName": "对比",
+  "chartType": "LINE_CHART",
+  "customEchartConfig": {
+    "legend": {
+      "left": "left",
+      "orient": "vertical"
+    },
+    "series": [
+      {
+        "data": [
+          {
+            "name": "Search Engine",
+            "value": 1048
+          },
+          {
+            "name": "Direct",
+            "value": 735
+          },
+          {
+            "name": "Email",
+            "value": 580
+          },
+          {
+            "name": "Union Ads",
+            "value": 484
+          },
+          {
+            "name": "Video Ads",
+            "value": 300
+          }
+        ],
+        "emphasis": {
+          "itemStyle": {
+            "shadowBlur": 10,
+            "shadowColor": "rgba(0, 0, 0, 0.5)",
+            "shadowOffsetX": 0
+          }
+        },
+        "name": "Access From",
+        "radius": "50%",
+        "type": "pie"
+      }
+    ],
+    "title": {
+      "left": "center",
+      "subtext": "Fake Data",
+      "text": "Referer of a Website"
+    },
+    "tooltip": {
+      "trigger": "item"
+    }
+  },
+  "displayName": "Echarts",
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "fontFamily"
+    }
+  ],
+  "dynamicPropertyPathList": [],
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "hideCard": false,
+  "iconSVG": "/static/media/icon.147b39286a6267f3f03061f79da8d3f2.svg",
+  "isDeprecated": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "9s7x2w0wfs",
+  "leftColumn": 0,
+  "listener": {},
+  "minWidth": 450,
+  "mobileBottomRow": 43,
+  "mobileLeftColumn": 5,
+  "mobileRightColumn": 29,
+  "mobileTopRow": 11,
+  "mycustom": 2,
+  "parentColumnSpace": 19.8125,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 3,
+  "searchTags": [
+    "graph",
+    "echart",
+    "chart",
+    "visualisations"
+  ],
+  "tags": [
+    "数据展示类"
+  ],
+  "topRow": 0,
+  "type": "ECHART_WIDGET",
+  "version": 1,
+  "widgetId": "93kuo1i89u",
+  "widgetName": "Echarts1",
+  "xAxisName": "品类",
+  "yAxisName": "销量"
+}

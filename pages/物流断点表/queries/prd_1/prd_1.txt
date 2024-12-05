@@ -1,0 +1,9 @@
+SELECT DISTINCT 
+    tf.f_name 工厂名称,
+    tp.f_material_code 物料编码
+FROM t_factory tf
+INNER JOIN t_model1 tm1 ON tm1.fk_factory = tf.id
+INNER JOIN t_model2 tm2 ON tm2.fk_model1 = tm1.id
+INNER JOIN tr_model2_product tm2p ON tm2p.fk_model2 = tm2.id
+INNER JOIN t_products tp ON tp.id = tm2p.fk_product
+;

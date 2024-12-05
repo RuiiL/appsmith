@@ -1,0 +1,15 @@
+SELECT tf.f_name          AS 工厂名称,
+       tp.f_material_code AS 物料编码,
+       date_format(stk.f_date, '%Y/%m/%d')         AS 盘存日期,
+       stk.f_num          AS 盘存数量
+FROM tr_factory_product_stock stk
+         INNER JOIN t_products tp ON tp.id = stk.fk_product
+         INNER JOIN t_factory tf ON tf.id = stk.fk_factory
+         INNER JOIN (SELECT fk_factory,
+                            fk_product,
+                            MAX(f_date) AS latest_date
+                     FROM tr_factory_product_stock
+                     GROUP BY fk_factory, fk_product) latest
+                    ON stk.fk_factory = latest.fk_factory AND stk.fk_product = latest.fk_product AND
+                       stk.f_date = latest.latest_date
+ORDER BY tf.f_name, tp.f_material_code

@@ -1,0 +1,5 @@
+SELECT
+    replace(warehouse_name,'客户库-','') name,
+    warehouse_name code
+FROM ba_warehouse
+WHERE group_name = '客户库'

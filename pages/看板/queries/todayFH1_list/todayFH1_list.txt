@@ -1,0 +1,8 @@
+SELECT
+    bill_number 单据编号,
+    TIME(accounting_date) 发货时间,
+    target_warehouse_name 目的地,
+    attr2 车辆
+FROM mm_allocation_bill
+WHERE accounting_date >= CONCAT(DATE_FORMAT(DATE_SUB(NOW(), INTERVAL 450 MINUTE), '%Y-%m-%d'), ' 07:30:00')
+AND target_warehouse_name LIKE '%{{RG_transListFilter.selectedOptionValue=='all'?'':RG_transListFilter.selectedOptionValue}}%';

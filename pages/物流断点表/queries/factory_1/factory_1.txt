@@ -1,0 +1,5 @@
+SELECT
+f_name label,
+f_name value
+FROM
+t_factory

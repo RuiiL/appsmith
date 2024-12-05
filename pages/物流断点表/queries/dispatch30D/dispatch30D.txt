@@ -1,0 +1,15 @@
+SELECT 工厂名称,
+       物料编码,
+       日期,
+       SUM(数量) 数量
+FROM (SELECT -- a.target_warehouse_name                                                   客户库,
+             REPLACE(a.target_warehouse_name, '客户库-', '')                            工厂名称,
+             b.material_code                                                           物料编码,
+             -- a.accounting_date                                                         发货时间,
+             DATE_FORMAT(DATE_SUB(a.accounting_date, INTERVAL 450 MINUTE), '%Y/%m/%d') 日期,
+             b.plan_qty                                                                数量
+      FROM mm_allocation_bill a
+               INNER JOIN mm_allocation_detail b ON b.bill_id = a.id
+      WHERE a.accounting_date > CONCAT(DATE_FORMAT(DATE_SUB(NOW(), INTERVAL 32 DAY), '%Y/%m/%d'), ' 07:30:00')
+        AND a.target_warehouse_name LIKE '客户库-%') t1
+GROUP BY 工厂名称, 物料编码, 日期

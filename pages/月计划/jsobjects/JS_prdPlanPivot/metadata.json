@@ -1,0 +1,20 @@
+{
+  "gitSyncId": "6736af996e7a0860dc2f3765_674008aedf29864d2d9b1507",
+  "id": "月计划_JS_prdPlanPivot",
+  "unpublishedCollection": {
+    "name": "JS_prdPlanPivot",
+    "pageId": "月计划",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "myVar1",
+        "value": "[]"
+      },
+      {
+        "name": "myVar2",
+        "value": "{}"
+      }
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+SELECT 工厂,
+       物料编码,
+       日期,
+       SUM(数量) 数量
+FROM (SELECT tf.f_name                           工厂,
+             tp.f_material_code                  物料编码,
+             DATE_FORMAT(tpp.f_date, '%Y/%m/%d') 日期,
+             tpp.f_num                           数量
+      FROM t_product_plan tpp
+               INNER JOIN t_factory tf ON tf.id = tpp.fk_factory
+               INNER JOIN t_products tp ON tp.id = tpp.fk_product
+      WHERE tpp.f_date >= DATE_SUB(CURRENT_DATE(), INTERVAL 1 DAY)) t1
+GROUP BY 工厂, 物料编码, 日期

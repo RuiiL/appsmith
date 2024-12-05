@@ -1,0 +1,17 @@
+SELECT 工厂, 调入库, 物料编码, 物料名称, 日期, SUM(数量) 数量
+FROM (
+	SELECT 
+					   REPLACE(a.target_warehouse_name, '客户库-', '')                           工厂,
+             a.target_warehouse_name                                                            调入库,
+             b.material_code 物料编码, b.material_name 物料名称,
+             DATE_FORMAT(DATE_SUB(a.accounting_date, INTERVAL {{Checkbox_DateOffset.isChecked?450:0}} MINUTE), '%Y-%m-%d') 日期,
+             b.plan_qty                                                                数量
+      FROM mm_allocation_bill a INNER JOIN mm_allocation_detail b ON b.bill_id = a.id
+      WHERE a.target_warehouse_name LIKE '%{{Select_Factory.selectedOptionValue || '客户库-'}}%'
+				AND b.material_code LIKE '%{{Input_MaterialCode.text}}%'
+				AND b.material_name LIKE '%{{Input_MaterialName.text}}%'
+				AND a.accounting_date >= '{{DatePicker_Start.formattedDate}}'
+				AND a.accounting_date <= '{{DatePicker_End.formattedDate}}'
+) t1
+GROUP BY 工厂, 调入库, 物料编码, 物料名称, 日期
+ORDER BY 工厂, 调入库, 物料编码, 物料名称, 日期

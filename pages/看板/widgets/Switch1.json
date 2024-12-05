@@ -1,0 +1,57 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "alignWidget": "LEFT",
+  "animateLoading": false,
+  "bottomRow": 90,
+  "boxShadow": "none",
+  "defaultSwitchState": false,
+  "displayName": "开关",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [
+    {
+      "key": "onChange"
+    }
+  ],
+  "hideCard": false,
+  "iconSVG": "/static/media/icon.afbd826fee9d09b12c5cde30a8c6fe62.svg",
+  "isDeprecated": false,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "tcib9nrnve",
+  "label": "自动更新",
+  "labelPosition": "Right",
+  "leftColumn": 55,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 95,
+  "mobileLeftColumn": 36,
+  "mobileRightColumn": 48,
+  "mobileTopRow": 91,
+  "onChange": "{{consoleObject._autoFresh();}}",
+  "originalBottomRow": 97,
+  "originalTopRow": 93,
+  "parentColumnSpace": 13.578125,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "searchTags": [
+    "toggle",
+    "switch"
+  ],
+  "tags": [
+    "选择器组件"
+  ],
+  "topRow": 86,
+  "type": "SWITCH_WIDGET",
+  "version": 1,
+  "widgetId": "cxwl621jxt",
+  "widgetName": "Switch1"
+}

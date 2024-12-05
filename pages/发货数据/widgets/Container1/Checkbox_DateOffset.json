@@ -1,0 +1,57 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "alignWidget": "LEFT",
+  "animateLoading": false,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 5,
+  "defaultCheckedState": true,
+  "displayName": "勾选",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "hideCard": false,
+  "iconSVG": "/static/media/icon.7b004ee098ca948e952234e7baec6d11.svg",
+  "isDeprecated": false,
+  "isDisabled": false,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "tmtbvqumsy",
+  "label": "偏移日期",
+  "labelPosition": "Right",
+  "leftColumn": 48,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 10,
+  "mobileLeftColumn": 43,
+  "mobileRightColumn": 55,
+  "mobileTopRow": 6,
+  "originalBottomRow": 10,
+  "originalTopRow": 6,
+  "parentColumnSpace": 18.3935546875,
+  "parentId": "70vi0c7iow",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 53,
+  "searchTags": [
+    "boolean",
+    "checkbox"
+  ],
+  "tags": [
+    "选择器组件"
+  ],
+  "topRow": 1,
+  "type": "CHECKBOX_WIDGET",
+  "version": 1,
+  "widgetId": "f1bz9697xq",
+  "widgetName": "Checkbox_DateOffset"
+}

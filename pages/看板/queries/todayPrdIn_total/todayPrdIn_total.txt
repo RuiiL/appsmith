@@ -1,0 +1,6 @@
+SELECT
+    sum(in_stock_qty) 成品入库总数
+FROM mm_prod_finished_in_bill
+WHERE in_stock_warehouse_number = '0301'
+  AND created_dt >= CONCAT(DATE_FORMAT(DATE_SUB(NOW(), INTERVAL 450 MINUTE), '%Y-%m-%d'), ' 07:30:00')
+	AND material_code IN ({{prdList.data.map(obj => `'${obj.物料编码}'`).join(',')}});

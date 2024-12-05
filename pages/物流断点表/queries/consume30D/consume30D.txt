@@ -1,0 +1,13 @@
+SELECT 工厂名称,
+       物料编码,
+       日期,
+       sum(数量) 数量
+FROM (SELECT f.f_name                           工厂名称,
+             p.f_material_code                  物料编码,
+             DATE_FORMAT(pc.f_date, '%Y/%m/%d') 日期,
+             pc.f_num                           数量
+      FROM t_product_consum pc
+               INNER JOIN t_factory f ON f.id = pc.fk_factory
+               INNER JOIN t_products p ON p.id = pc.fk_product
+      WHERE f_date >= CONCAT(DATE_FORMAT(DATE_SUB(NOW(), INTERVAL 30 DAY), '%Y/%m/%d'), ' 07:30:00')) t1
+GROUP BY 工厂名称, 物料编码, 日期

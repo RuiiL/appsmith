@@ -1,0 +1,73 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "alignment": "left",
+  "animateLoading": false,
+  "bottomRow": 87,
+  "boxShadow": "none",
+  "defaultOptionValue": "赛力斯三工厂",
+  "displayName": "单选组",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "options"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "options"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onSelectionChange"
+    }
+  ],
+  "flexVerticalAlignment": "start",
+  "hideCard": false,
+  "iconSVG": "/static/media/icon.99c101b3b70073f9c00e9af6523f9427.svg",
+  "isDeprecated": false,
+  "isDisabled": false,
+  "isInline": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "ki0rtioiet",
+  "label": "",
+  "labelAlignment": "left",
+  "labelPosition": "Auto",
+  "labelStyle": "",
+  "labelTextColor": "#231f20",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 92,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 20,
+  "mobileTopRow": 86,
+  "onSelectionChange": "{{inventory.run()}}",
+  "options": "{{factory_1.data}}",
+  "originalBottomRow": 87,
+  "originalTopRow": 78,
+  "parentColumnSpace": 13.75,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 54,
+  "searchTags": [
+    "radio",
+    "group"
+  ],
+  "tags": [
+    "选择器组件"
+  ],
+  "topRow": 78,
+  "type": "RADIO_GROUP_WIDGET",
+  "version": 1,
+  "widgetId": "pmiqcpyknb",
+  "widgetName": "selectFactory"
+}

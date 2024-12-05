@@ -1,0 +1,8 @@
+SELECT 物料编码,
+       SUM(数量) 数量
+FROM (SELECT tp.f_material_code 物料编码,
+             tpp.f_num          数量
+      FROM t_product_plan tpp
+               INNER JOIN t_products tp ON tp.id = tpp.fk_product
+      WHERE MONTH(tpp.f_date) = MONTH(CURRENT_DATE())) t1
+GROUP BY 物料编码
