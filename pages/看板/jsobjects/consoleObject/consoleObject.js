@@ -22,9 +22,9 @@ export default {
 				todayPrdIn_groupCode.run();
 				
 				storeValue('freshedTime',new Date().toLocaleString());
-			}, 30000, "5min");
+			}, 600000, "10min");
 		} else {
-			clearInterval("5min");
+			clearInterval("10min");
 		}
 	}
 

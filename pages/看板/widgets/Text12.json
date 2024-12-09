@@ -51,7 +51,7 @@
   "tags": [
     "通用类"
   ],
-  "text": "上次更新时间：{{global.store.freshedTime}}",
+  "text": "上次更新时间：{{appsmith.store.freshedTime}}",
   "textAlign": "LEFT",
   "textColor": "var(--ads-color-brand)",
   "topRow": 86,
