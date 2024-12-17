@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "6736af996e7a0860dc2f3765_674562a3c556e03a1f1fd148",
-  "id": "看板_todayFH1_detail",
+  "gitSyncId": "6736af996e7a0860dc2f3765_67455e59c556e03a1f1fd146",
+  "id": "看板_mm_allocation_bill_toDayList",
   "pluginId": "mysql-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT\n    b.material_code 物料编码,\n    b.material_name 名称,\n    b.plan_qty 数量\nFROM mm_allocation_bill a\n         INNER JOIN mm_allocation_detail b ON b.bill_id = a.id\nWHERE a.accounting_date > CONCAT(DATE_FORMAT(DATE_SUB(NOW(), INTERVAL 450 MINUTE), '%Y-%m-%d'), ' 07:30:00')\n AND a.bill_number LIKE '%{{Table_transList.selectedRow.单据编号}}%';",
+      "body": "SELECT\n    bill_number 单据编号,\n    TIME(accounting_date) 发货时间,\n    target_warehouse_name 目的地,\n    attr2 车辆\nFROM mm_allocation_bill\nWHERE accounting_date >= CONCAT(DATE_FORMAT(DATE_SUB(NOW(), INTERVAL 450 MINUTE), '%Y-%m-%d'), ' 07:30:00')\nAND target_warehouse_name LIKE '%{{RG_transListFilter.selectedOptionValue=='all'?'':RG_transListFilter.selectedOptionValue}}%';",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -28,7 +28,7 @@
       }
     ],
     "executeOnLoad": false,
-    "name": "todayFH1_detail",
+    "name": "mm_allocation_bill_toDayList",
     "pageId": "看板",
     "userSetOnLoad": true
   }

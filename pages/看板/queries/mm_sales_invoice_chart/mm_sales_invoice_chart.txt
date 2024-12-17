@@ -1,0 +1,9 @@
+SELECT 物料编码, 要货日期 x, SUM(数量) y
+FROM (SELECT material_code       物料编码,
+             plan_qty            数量,
+             DATE(delivery_date) 要货日期
+      FROM mm_sales_invoice_detail
+      WHERE delivery_date >= DATE_FORMAT(NOW(), '%Y-%m-01')
+        AND delivery_date < DATE_FORMAT(DATE_ADD(NOW(), INTERVAL 1 MONTH), '%Y-%m-01')
+        AND material_code = {{Table1.triggeredRow.物料编码}}) t1
+GROUP BY 物料编码, 要货日期

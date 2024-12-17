@@ -1,6 +1,6 @@
 {
   "gitSyncId": "6736af996e7a0860dc2f3765_6743ce66df29864d2d9b16d4",
-  "id": "看板_todayFH_groupCode",
+  "id": "看板_mm_allocation_bill_toDaySum",
   "pluginId": "mysql-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
@@ -24,7 +24,7 @@
     },
     "dynamicBindingPathList": [],
     "executeOnLoad": true,
-    "name": "todayFH_groupCode",
+    "name": "mm_allocation_bill_toDaySum",
     "pageId": "看板",
     "userSetOnLoad": true
   }

@@ -238,7 +238,7 @@
   "searchTags": [
     "table"
   ],
-  "tableData": "{{todayFH1_detail.data}}",
+  "tableData": "{{mm_allocation_bill_detail.data}}",
   "tags": [
     "数据展示类"
   ],

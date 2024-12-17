@@ -34,7 +34,7 @@
   "mobileLeftColumn": 46,
   "mobileRightColumn": 62,
   "mobileTopRow": 2,
-  "onClick": "{{showModal('Modal1');\ntodayFH1_list.run()}}",
+  "onClick": "{{showModal('Modal1');\nmm_allocation_bill_toDayList.run()}}",
   "parentId": "n7mktl0xe0",
   "renderMode": "CANVAS",
   "responsiveBehavior": "hug",

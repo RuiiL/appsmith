@@ -109,7 +109,7 @@
   "mobileRightColumn": 30,
   "mobileTopRow": 4,
   "needsHeightForContent": true,
-  "onRowSelected": "{{todayFH1_detail.run()}}",
+  "onRowSelected": "{{mm_allocation_bill_detail.run()}}",
   "parentColumnSpace": 6.9375,
   "parentId": "v89xjvkfbd",
   "parentRowSpace": 10,
@@ -279,7 +279,7 @@
   "searchTags": [
     "table"
   ],
-  "tableData": "{{todayFH1_list.data}}",
+  "tableData": "{{mm_allocation_bill_toDayList.data}}",
   "tags": [
     "数据展示类"
   ],
