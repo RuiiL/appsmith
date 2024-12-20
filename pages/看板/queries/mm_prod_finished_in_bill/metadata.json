@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "-- 本月入库\nSELECT material_code             物料编码,\n       sum(in_stock_qty)              数量\nFROM mm_prod_finished_in_bill\nWHERE created_dt >= DATE_FORMAT(DATE_ADD(NOW(), INTERVAL -1 MONTH), '%Y-%m-01')\n  AND created_dt < DATE_FORMAT(NOW(), '%Y-%m-01')\n  AND in_stock_warehouse_number = 0301\nGROUP BY material_code;",
+      "body": "-- 本月入库\nSELECT material_code             物料编码,\n       sum(in_stock_qty)              数量\nFROM mm_prod_finished_in_bill\nWHERE created_dt >= DATE_FORMAT(NOW(), '%Y-%m-01')\n  AND created_dt < DATE_FORMAT(DATE_ADD(NOW(), INTERVAL 1 MONTH), '%Y-%m-01')\n  AND in_stock_warehouse_number = 0301\nGROUP BY material_code;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

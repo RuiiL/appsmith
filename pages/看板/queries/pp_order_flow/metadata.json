@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "-- 本月报工\nSELECT _of.material_code 物料编码,\n       SUM(_of.ok_qty)   数量\nFROM pp_order_flow _of\n         INNER JOIN pp_order_work ow ON ow.id = _of.order_work_id\nWHERE _of.start_dt >= DATE_FORMAT(DATE_ADD(NOW(), INTERVAL -1 MONTH), '%Y-%m-01')\n  AND _of.start_dt < DATE_FORMAT(NOW(), '%Y-%m-01')\n  AND ow.operation_finish_flag = 1\nGROUP BY _of.material_code",
+      "body": "-- 本月报工\nSELECT _of.material_code 物料编码,\n       SUM(_of.ok_qty)   数量\nFROM pp_order_flow _of\n         INNER JOIN pp_order_work ow ON ow.id = _of.order_work_id\nWHERE _of.start_dt >= DATE_FORMAT(NOW(), '%Y-%m-01')\n  AND _of.start_dt < DATE_FORMAT(DATE_ADD(NOW(), INTERVAL 1 MONTH), '%Y-%m-01')\n  AND ow.operation_finish_flag = 1\nGROUP BY _of.material_code",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

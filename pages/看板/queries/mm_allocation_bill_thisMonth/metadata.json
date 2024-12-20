@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "-- 本月发货\nSELECT b.material_code 物料编码,\n       SUM(b.plan_qty) 数量\nFROM mm_allocation_bill a\n         INNER JOIN mm_allocation_detail b ON b.bill_number = a.bill_number\nWHERE a.accounting_date >= DATE_FORMAT(DATE_ADD(NOW(), INTERVAL -1 MONTH), '%Y-%m-01')\n  AND a.accounting_date < DATE_FORMAT(NOW(), '%Y-%m-01')\n  AND a.dict_type = 302\nGROUP BY b.material_code;",
+      "body": "-- 本月发货\nSELECT b.material_code 物料编码,\n       SUM(b.plan_qty) 数量\nFROM mm_allocation_bill a\n         INNER JOIN mm_allocation_detail b ON b.bill_number = a.bill_number\nWHERE a.accounting_date >= DATE_FORMAT(NOW(), '%Y-%m-01')\n  AND a.accounting_date < DATE_FORMAT(DATE_ADD(NOW(), INTERVAL 1 MONTH), '%Y-%m-01')\n  AND a.dict_type = 302\nGROUP BY b.material_code;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

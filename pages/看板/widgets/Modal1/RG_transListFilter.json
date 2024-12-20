@@ -2,7 +2,7 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "alignment": "left",
   "animateLoading": false,
-  "bottomRow": 52,
+  "bottomRow": 60,
   "boxShadow": "none",
   "defaultOptionValue": "all",
   "displayName": "单选组",

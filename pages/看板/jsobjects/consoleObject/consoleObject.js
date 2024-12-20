@@ -10,15 +10,19 @@ export default {
 	_autoFresh(){
 		if (Switch1.isSwitchedOn) {
 			setInterval(async () => { 
-				// now.run();
-				T_BD_Inventory_1.run();
-				todayFH_total.run();
-				mm_allocation_bill_toDaySum.run();
-				todayRFID_total.run();
-
-				await prdList.run();
+				// 主表格
+				mm_sales_invoice_thisMonth.run();
 				T_BD_MATERIAL.run();
-				prdPlan_7d.run();
+				mm_allocation_bill_thisMonth.run();
+				func._cal();
+				pp_order_flow.run();
+				mm_prod_finished_in_bill.run();
+				T_BD_Inventory_1.run();
+				mm_allocation_bill_toDaySum.run();
+				
+				// 卡片
+				todayFH_total.run();
+				todayRFID_total.run();
 				todayPrdIn_total.run();
 				todayPrdIn_groupCode.run();
 
@@ -42,7 +46,10 @@ export default {
 		function job(){
 			const result = mm_sales_invoice_thisMonth.data.map(i => {
 				const dispatched = (mm_allocation_bill_thisMonth.data.filter(j => j.物料编码 == i.物料编码)[0] || {}).数量 || 0; // filter结果可能为空[]
-				return {物料编码:i.物料编码, 订单完成率: (dispatched / i.本月订单数量 * 100).toFixed(2) + '%'};
+				const rate = (dispatched / i.本月订单数量 * 100).toFixed(2);
+				const rateT = rate>0 ? rate.toString() + '%' : '';
+				const sym = rate >= 100 ? '✅' : (rate>=75 ? '🟩' : rate>=50?'🟨': rate>=25?'🟧':rate>0?'🟥':'❌');
+				return {物料编码:i.物料编码, 订单完成率: rateT + sym};
 			})
 			return result;
 		}

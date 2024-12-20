@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT 物料编码, 发货日期 x, SUM(数量) y\nFROM (SELECT b.material_code         物料编码,\n             DATE(a.accounting_date) 发货日期,\n             b.plan_qty              数量\n      FROM mm_allocation_bill a\n               INNER JOIN mm_allocation_detail b ON b.bill_number = a.bill_number\n      WHERE a.accounting_date >= DATE_FORMAT(NOW(), '%Y-%m-01')\n        AND a.accounting_date < DATE_FORMAT(DATE_ADD(NOW(), INTERVAL 1 MONTH), '%Y-%m-01')\n        AND a.dict_type = 302\n        AND material_code = {{Table1.triggeredRow.物料编码}}\n      GROUP BY b.material_code) t1\nGROUP BY 物料编码, 发货日期",
+      "body": "SELECT b.material_code         物料编码,\n       DATE(a.accounting_date) x,\n       b.plan_qty              y\nFROM mm_allocation_bill a\n         INNER JOIN mm_allocation_detail b ON b.bill_number = a.bill_number\nWHERE a.accounting_date >= DATE_FORMAT(NOW(), '%Y-%m-01')\n  AND a.accounting_date < DATE_FORMAT(DATE_ADD(NOW(), INTERVAL 1 MONTH), '%Y-%m-01')\n  AND a.dict_type = 302\n  AND material_code = {{Table1.triggeredRow.物料编码}}\nGROUP BY b.material_code, DATE(a.accounting_date)",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

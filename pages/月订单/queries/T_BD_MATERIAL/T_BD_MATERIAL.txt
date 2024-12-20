@@ -1,5 +1,5 @@
 SELECT
-			 FNUMBER                                     AS 物料编码,
+	FNUMBER                                     AS 物料编码,
        FNAME                                       AS 名称,
        F_QQQ_CHECKBOX1                             AS 电泳件,
        ISNULL((SELECT CXL.FNAME

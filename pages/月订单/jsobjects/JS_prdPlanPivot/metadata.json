@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "67564026ae81b150477c2cc0_8cb153f2-0c4b-47b2-bfdf-85fe3cc5aa80",
+  "id": "月订单_JS_prdPlanPivot",
+  "unpublishedCollection": {
+    "name": "JS_prdPlanPivot",
+    "pageId": "月订单",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}
