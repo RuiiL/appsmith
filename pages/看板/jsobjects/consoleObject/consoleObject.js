@@ -10,26 +10,30 @@ export default {
 	_autoFresh(){
 		if (Switch1.isSwitchedOn) {
 			setInterval(async () => { 
-				// 主表格
-				mm_sales_invoice_thisMonth.run();
-				T_BD_MATERIAL.run();
-				mm_allocation_bill_thisMonth.run();
-				func._cal();
-				pp_order_flow.run();
-				mm_prod_finished_in_bill.run();
-				T_BD_Inventory_1.run();
-				mm_allocation_bill_toDaySum.run();
-				
-				// 卡片
-				todayFH_total.run();
-				todayRFID_total.run();
-				todayPrdIn_total.run();
-				todayPrdIn_groupCode.run();
-
-				storeValue('freshedTime',new Date().toLocaleString());
+				_fresh();
 			}, 600000, "10min");
 		} else {
 			clearInterval("10min");
+		}
+
+		function _fresh() {
+			// 主表格
+			mm_sales_invoice_thisMonth.run();
+			T_BD_MATERIAL.run();
+			mm_allocation_bill_thisMonth.run();
+			func._cal();
+			pp_order_flow.run();
+			mm_prod_finished_in_bill.run();
+			T_BD_Inventory_1.run();
+			mm_allocation_bill_toDaySum.run();
+
+			// 卡片
+			todayFH_total.run();
+			todayRFID_total.run();
+			todayPrdIn_total.run();
+			todayPrdIn_groupCode.run();
+
+			storeValue('freshedTime',new Date().toLocaleString());
 		}
 	},
 
