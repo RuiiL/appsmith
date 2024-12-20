@@ -1,6 +1,6 @@
 {
   "gitSyncId": "67564026ae81b150477c2cc0_1fc27618-e02f-41e7-92f0-7b0839587b81",
-  "id": "看板_mm_prod_finished_in_bill",
+  "id": "看板_mm_prod_finished_in_f3",
   "pluginId": "mysql-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
@@ -23,9 +23,9 @@
       "pluginId": "mysql-plugin"
     },
     "dynamicBindingPathList": [],
-    "executeOnLoad": true,
-    "name": "mm_prod_finished_in_bill",
+    "executeOnLoad": false,
+    "name": "mm_prod_finished_in_f3",
     "pageId": "看板",
-    "userSetOnLoad": false
+    "userSetOnLoad": true
   }
 }

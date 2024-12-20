@@ -1,6 +1,6 @@
 {
   "gitSyncId": "6736af996e7a0860dc2f3765_6743ce66df29864d2d9b16d4",
-  "id": "看板_mm_allocation_bill_toDaySum",
+  "id": "看板_mm_allocation_bill_f6",
   "pluginId": "mysql-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
@@ -23,8 +23,8 @@
       "pluginId": "mysql-plugin"
     },
     "dynamicBindingPathList": [],
-    "executeOnLoad": true,
-    "name": "mm_allocation_bill_toDaySum",
+    "executeOnLoad": false,
+    "name": "mm_allocation_bill_f6",
     "pageId": "看板",
     "userSetOnLoad": true
   }

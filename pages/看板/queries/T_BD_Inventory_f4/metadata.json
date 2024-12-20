@@ -1,6 +1,6 @@
 {
   "gitSyncId": "6736af996e7a0860dc2f3765_6743ce66df29864d2d9b16d2",
-  "id": "看板_T_BD_Inventory_1",
+  "id": "看板_T_BD_Inventory_f4",
   "pluginId": "mssql-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
@@ -23,9 +23,9 @@
       "pluginId": "mssql-plugin"
     },
     "dynamicBindingPathList": [],
-    "executeOnLoad": true,
-    "name": "T_BD_Inventory_1",
+    "executeOnLoad": false,
+    "name": "T_BD_Inventory_f4",
     "pageId": "看板",
-    "userSetOnLoad": false
+    "userSetOnLoad": true
   }
 }

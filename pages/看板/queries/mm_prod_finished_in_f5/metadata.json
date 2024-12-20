@@ -1,6 +1,6 @@
 {
   "gitSyncId": "6736af996e7a0860dc2f3765_67453fafc556e03a1f1fd13c",
-  "id": "看板_todayPrdIn_groupCode",
+  "id": "看板_mm_prod_finished_in_f5",
   "pluginId": "mysql-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
@@ -28,7 +28,7 @@
       }
     ],
     "executeOnLoad": true,
-    "name": "todayPrdIn_groupCode",
+    "name": "mm_prod_finished_in_f5",
     "pageId": "看板",
     "userSetOnLoad": false
   }

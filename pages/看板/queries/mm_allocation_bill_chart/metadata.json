@@ -27,9 +27,9 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": true,
+    "executeOnLoad": false,
     "name": "mm_allocation_bill_chart",
     "pageId": "看板",
-    "userSetOnLoad": false
+    "userSetOnLoad": true
   }
 }

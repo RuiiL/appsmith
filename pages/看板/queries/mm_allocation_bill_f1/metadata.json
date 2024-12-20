@@ -1,6 +1,6 @@
 {
   "gitSyncId": "67564026ae81b150477c2cc0_618d50eb-5d7d-4fc2-837b-e25afac674da",
-  "id": "看板_mm_allocation_bill_thisMonth",
+  "id": "看板_mm_allocation_bill_f1",
   "pluginId": "mysql-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
@@ -23,9 +23,9 @@
       "pluginId": "mysql-plugin"
     },
     "dynamicBindingPathList": [],
-    "executeOnLoad": true,
-    "name": "mm_allocation_bill_thisMonth",
+    "executeOnLoad": false,
+    "name": "mm_allocation_bill_f1",
     "pageId": "看板",
-    "userSetOnLoad": false
+    "userSetOnLoad": true
   }
 }

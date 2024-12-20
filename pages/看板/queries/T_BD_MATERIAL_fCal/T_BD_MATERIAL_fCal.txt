@@ -12,4 +12,4 @@ SELECT
 FROM T_BD_MATERIAL BM
          INNER JOIN T_BD_MATERIAL_L BML ON BML.FMATERIALID = BM.FMATERIALID AND BML.FLOCALEID = 2052
 WHERE BM.FUSEORGID = 100471
-  AND FNUMBER IN ({{mm_sales_invoice_thisMonth.data.map(obj => `'${obj.物料编码}'`).join(',')}})
+  AND FNUMBER IN ({{mm_sales_invoice_main.data.map(obj => `'${obj.物料编码}'`).join(',')}})

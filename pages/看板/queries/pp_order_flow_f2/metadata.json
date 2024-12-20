@@ -1,6 +1,6 @@
 {
   "gitSyncId": "67564026ae81b150477c2cc0_25581e4a-0e4c-4a8d-961b-3f2603566936",
-  "id": "看板_pp_order_flow",
+  "id": "看板_pp_order_flow_f2",
   "pluginId": "mysql-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
@@ -23,9 +23,9 @@
       "pluginId": "mysql-plugin"
     },
     "dynamicBindingPathList": [],
-    "executeOnLoad": true,
-    "name": "pp_order_flow",
+    "executeOnLoad": false,
+    "name": "pp_order_flow_f2",
     "pageId": "看板",
-    "userSetOnLoad": false
+    "userSetOnLoad": true
   }
 }

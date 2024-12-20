@@ -1,6 +1,6 @@
 {
   "gitSyncId": "674d2021f5bdbc13378a37ef_450dd3de-629d-461a-8186-f24397a58129",
-  "id": "看板_mm_sales_invoice_thisMonth",
+  "id": "看板_mm_sales_invoice_main",
   "pluginId": "mysql-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
@@ -23,9 +23,9 @@
       "pluginId": "mysql-plugin"
     },
     "dynamicBindingPathList": [],
-    "executeOnLoad": true,
-    "name": "mm_sales_invoice_thisMonth",
+    "executeOnLoad": false,
+    "name": "mm_sales_invoice_main",
     "pageId": "看板",
-    "userSetOnLoad": false
+    "userSetOnLoad": true
   }
 }
