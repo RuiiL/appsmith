@@ -1,8 +1,0 @@
--- 本月入库
-SELECT material_code             物料编码,
-       sum(in_stock_qty)              数量
-FROM mm_prod_finished_in_bill
-WHERE created_dt >= DATE_FORMAT(DATE_ADD(NOW(), INTERVAL -1 MONTH), '%Y-%m-01')
-  AND created_dt < DATE_FORMAT(NOW(), '%Y-%m-01')
-  AND in_stock_warehouse_number = 0301
-GROUP BY material_code;

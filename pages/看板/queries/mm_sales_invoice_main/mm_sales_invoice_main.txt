@@ -1,0 +1,8 @@
+SELECT
+    material_code 物料编码,
+    -- material_name 物料名称,
+    SUM(plan_qty) 本月订单数量
+FROM mm_sales_invoice_detail
+WHERE delivery_date >= DATE_FORMAT(NOW(), '%Y-%m-01')
+  AND delivery_date < DATE_FORMAT(DATE_ADD(NOW(), INTERVAL 1 MONTH), '%Y-%m-01')
+GROUP BY material_code -- , material_name

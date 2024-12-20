@@ -1,9 +1,0 @@
--- 本月发货
-SELECT b.material_code 物料编码,
-       SUM(b.plan_qty) 数量
-FROM mm_allocation_bill a
-         INNER JOIN mm_allocation_detail b ON b.bill_number = a.bill_number
-WHERE a.accounting_date >= DATE_FORMAT(DATE_ADD(NOW(), INTERVAL -1 MONTH), '%Y-%m-01')
-  AND a.accounting_date < DATE_FORMAT(NOW(), '%Y-%m-01')
-  AND a.dict_type = 302
-GROUP BY b.material_code;

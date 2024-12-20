@@ -1,0 +1,10 @@
+-- 本月销售订单：物料编码、名称、日期、SUM(数量）
+SELECT
+    material_code 物料编码,
+    material_name 物料名称,
+		DATE(delivery_date) 日期,
+    SUM(plan_qty) 数量
+FROM mm_sales_invoice_detail
+WHERE delivery_date >= DATE_FORMAT(NOW(), '%Y-%m-01')
+  AND delivery_date < DATE_FORMAT(DATE_ADD(NOW(), INTERVAL 1 MONTH), '%Y-%m-01')
+GROUP BY material_code, material_name, DATE(delivery_date)

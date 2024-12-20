@@ -1,0 +1,9 @@
+-- 本月报工
+SELECT _of.material_code 物料编码,
+       SUM(_of.ok_qty)   数量
+FROM pp_order_flow _of
+         INNER JOIN pp_order_work ow ON ow.id = _of.order_work_id
+WHERE _of.start_dt >= DATE_FORMAT(NOW(), '%Y-%m-01')
+  AND _of.start_dt < DATE_FORMAT(DATE_ADD(NOW(), INTERVAL 1 MONTH), '%Y-%m-01')
+  AND ow.operation_finish_flag = 1
+GROUP BY _of.material_code

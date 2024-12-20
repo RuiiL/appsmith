@@ -1,0 +1,15 @@
+SELECT
+			 FNUMBER                                     AS 物料编码,
+       FNAME                                       AS 名称,
+       F_QQQ_CHECKBOX1                             AS 电泳件,
+       ISNULL((SELECT CXL.FNAME
+               FROM PAEZ_T_CUST_ENTRY100020 CX
+                        INNER JOIN PAEZ_T_CUST_ENTRY100020_L CXL ON CXL.FID = CX.FID
+               WHERE CX.FDOCUMENTSTATUS = 'C'
+                 AND CX.FFORBIDSTATUS = 'A'
+                 AND CX.FUSEORGID = 100471
+                 AND CX.FID = BM.F_PAEZ_BASE), '') AS 车型
+FROM T_BD_MATERIAL BM
+         INNER JOIN T_BD_MATERIAL_L BML ON BML.FMATERIALID = BM.FMATERIALID AND BML.FLOCALEID = 2052
+WHERE BM.FUSEORGID = 100471
+  AND FNUMBER IN ({{mm_sales_invoice_main.data.map(obj => `'${obj.物料编码}'`).join(',')}})

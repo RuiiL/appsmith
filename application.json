@@ -62,6 +62,10 @@
     {
       "id": "报工和扫码入库差异对比",
       "isDefault": false
+    },
+    {
+      "id": "月订单",
+      "isDefault": false
     }
   ],
   "unpublishedAppLayout": {
