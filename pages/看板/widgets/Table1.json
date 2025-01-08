@@ -144,7 +144,7 @@
   "inlineEditingSaveOption": "ROW_LEVEL",
   "isDeprecated": false,
   "isLoading": false,
-  "isSortable": true,
+  "isSortable": false,
   "isVisible": true,
   "isVisibleDownload": true,
   "isVisibleFilters": false,
